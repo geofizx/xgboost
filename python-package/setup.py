@@ -35,7 +35,8 @@ setup(name='xgboost',
       # this will use MANIFEST.in during install where we specify additional files,
       # this is the golden line
       include_package_data=True,
-      data_files=[('xgboost', LIB_PATH)],
+      # data_files=[('xgboost', LIB_PATH)],
+      data_files=[('xgboost', [os.path.relpath(p) for p in LIB_PATH])],
       license='Apache-2.0',
       classifiers=['License :: OSI Approved :: Apache Software License'],
       url='https://github.com/dmlc/xgboost')
